@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="soti" GeneratedClassName="Settings1">
+  <Profiles />
+  <Settings>
+    <Setting Name="otServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">KEREMLT2\SQLEXPRESS</Value>
+    </Setting>
+    <Setting Name="otDatabase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pekin</Value>
+    </Setting>
+    <Setting Name="otUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DOCSADM</Value>
+    </Setting>
+    <Setting Name="otPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">q1w2e3+</Value>
+    </Setting>
+    <Setting Name="sapUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">wf-batch</Value>
+    </Setting>
+    <Setting Name="sapPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123456</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

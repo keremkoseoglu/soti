@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN_ZLAW_I6">
+    <wsaw:UsingAddressing xmlns:wsaw="http://schemas.xmlsoap.org/ws/2004/08/addressing" />
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication />
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZLAW_I6">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZLAW_I_SET_MASTER_DATA_OK">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZLAW_I_SET_DOCUMENT_TYPES">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZLAW_I_SET_DM_USERS">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZLAW_I_SET_DEPARTMENTS">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZLAW_I_GET_MASTER_DATA">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char120">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="120" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char35">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="35" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char71">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="71" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="clnt3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8" />
+          <xsd:pattern value="\d\d:\d\d:\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZLAW_S_CUSTOMERI">
+        <xsd:sequence>
+          <xsd:element name="KUNNR" type="tns:char10" />
+          <xsd:element name="NAME1" type="tns:char71" />
+          <xsd:element name="ONAM1" type="tns:char35" />
+          <xsd:element name="ONAM2" type="tns:char35" />
+          <xsd:element name="ACTIO" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_S_MATTERI">
+        <xsd:sequence>
+          <xsd:element name="MATNO" type="tns:char10" />
+          <xsd:element name="MATNM" type="tns:char120" />
+          <xsd:element name="KUNNR" type="tns:char10" />
+          <xsd:element name="ACTIO" type="tns:char1" />
+          <xsd:element name="NAME1" type="tns:char71" />
+          <xsd:element name="ONAM1" type="tns:char35" />
+          <xsd:element name="ONAM2" type="tns:char35" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_S_DEPARTMENT">
+        <xsd:sequence>
+          <xsd:element name="EDPRT" type="tns:char40" />
+          <xsd:element name="DPRTX" type="tns:char40" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_DM_04">
+        <xsd:sequence>
+          <xsd:element name="MANDT" type="tns:clnt3" />
+          <xsd:element name="USRID" type="tns:char40" />
+          <xsd:element name="FNAME" type="tns:char40" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_S_DOCTYPE">
+        <xsd:sequence>
+          <xsd:element name="TYPEI" type="tns:char20" />
+          <xsd:element name="DESCR" type="tns:char40" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_T_CUSTOMERI">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZLAW_S_CUSTOMERI" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_T_MATTERI">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZLAW_S_MATTERI" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_T_DEPARTMENT">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZLAW_S_DEPARTMENT" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_DM_04_T">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZLAW_DM_04" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZLAW_T_DOCTYPE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZLAW_S_DOCTYPE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZLAW_I_GET_MASTER_DATA">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_GET_MASTER_DATAResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="E_CUSTOMERS" type="tns:ZLAW_T_CUSTOMERI" />
+            <xsd:element name="E_ERDAT" type="tns:date" />
+            <xsd:element name="E_ERZET" type="tns:time" />
+            <xsd:element name="E_MATTERS" type="tns:ZLAW_T_MATTERI" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_DEPARTMENTS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="I_DEPARTMENTS" type="tns:ZLAW_T_DEPARTMENT" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_DEPARTMENTSResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_DM_USERS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="I_USER" type="tns:ZLAW_DM_04_T" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_DM_USERSResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_DOCUMENT_TYPES">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="I_DOCTYPES" type="tns:ZLAW_T_DOCTYPE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_DOCUMENT_TYPESResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_MASTER_DATA_OK">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="I_ERDAT" type="tns:date" />
+            <xsd:element minOccurs="0" name="I_ERZET" type="tns:time" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZLAW_I_SET_MASTER_DATA_OKResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZLAW_I_GET_MASTER_DATA">
+    <wsdl:part name="parameters" element="tns:ZLAW_I_GET_MASTER_DATA" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_GET_MASTER_DATAResponse">
+    <wsdl:part name="parameter" element="tns:ZLAW_I_GET_MASTER_DATAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_DEPARTMENTS">
+    <wsdl:part name="parameters" element="tns:ZLAW_I_SET_DEPARTMENTS" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_DEPARTMENTSResponse">
+    <wsdl:part name="parameter" element="tns:ZLAW_I_SET_DEPARTMENTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_DM_USERS">
+    <wsdl:part name="parameters" element="tns:ZLAW_I_SET_DM_USERS" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_DM_USERSResponse">
+    <wsdl:part name="parameter" element="tns:ZLAW_I_SET_DM_USERSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_DOCUMENT_TYPES">
+    <wsdl:part name="parameters" element="tns:ZLAW_I_SET_DOCUMENT_TYPES" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_DOCUMENT_TYPESResponse">
+    <wsdl:part name="parameter" element="tns:ZLAW_I_SET_DOCUMENT_TYPESResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_MASTER_DATA_OK">
+    <wsdl:part name="parameters" element="tns:ZLAW_I_SET_MASTER_DATA_OK" />
+  </wsdl:message>
+  <wsdl:message name="ZLAW_I_SET_MASTER_DATA_OKResponse">
+    <wsdl:part name="parameter" element="tns:ZLAW_I_SET_MASTER_DATA_OKResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZLAW_I6">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZLAW_I6" />
+    </wsp:Policy>
+    <wsdl:operation name="ZLAW_I_GET_MASTER_DATA">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZLAW_I_GET_MASTER_DATA" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZLAW_I_GET_MASTER_DATA" />
+      <wsdl:output message="tns:ZLAW_I_GET_MASTER_DATAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_DEPARTMENTS">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZLAW_I_SET_DEPARTMENTS" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZLAW_I_SET_DEPARTMENTS" />
+      <wsdl:output message="tns:ZLAW_I_SET_DEPARTMENTSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_DM_USERS">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZLAW_I_SET_DM_USERS" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZLAW_I_SET_DM_USERS" />
+      <wsdl:output message="tns:ZLAW_I_SET_DM_USERSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_DOCUMENT_TYPES">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZLAW_I_SET_DOCUMENT_TYPES" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZLAW_I_SET_DOCUMENT_TYPES" />
+      <wsdl:output message="tns:ZLAW_I_SET_DOCUMENT_TYPESResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_MASTER_DATA_OK">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZLAW_I_SET_MASTER_DATA_OK" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZLAW_I_SET_MASTER_DATA_OK" />
+      <wsdl:output message="tns:ZLAW_I_SET_MASTER_DATA_OKResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZLAW_I6" type="tns:ZLAW_I6">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZLAW_I6" />
+    </wsp:Policy>
+    <wsa:EndpointReference xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <wsa:ReferenceParameters />
+    </wsa:EndpointReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZLAW_I_GET_MASTER_DATA">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_DEPARTMENTS">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_DM_USERS">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_DOCUMENT_TYPES">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZLAW_I_SET_MASTER_DATA_OK">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZLAW_I6">
+    <wsdl:port name="ZLAW_I6" binding="tns:ZLAW_I6">
+      <soap:address location="http://APSOSIRIS.pekinandpekin.law:8004/sap/bc/srt/rfc/sap/zlaw_i6/500/zlaw_i6/zlaw_i6" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

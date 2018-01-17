@@ -1,0 +1,36 @@
+D:\Development\Pekin\soti\bin\Debug\soti.exe
+D:\Development\Pekin\soti\bin\Debug\soti.pdb
+D:\Development\Pekin\soti\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\Pekin\soti\obj\Debug\soti.exe
+D:\Development\Pekin\soti\obj\Debug\soti.pdb
+D:\Development\Pekin\soti\bin\Debug\soti.exe.config
+D:\Development\Pekin\soti\bin\Debug\Mind2Biz.DM.ClientMatter.dll
+D:\Development\Pekin\soti\bin\Debug\Mind2Biz.DM.ClientMatter.pdb
+D:\Development\Pekin\soti\bin\Debug\Mind2Biz.DM.ClientMatter.xml
+D:\Development\Pekin\soti\bin\Release\soti.exe.config
+D:\Development\Pekin\soti\bin\Release\soti.exe
+D:\Development\Pekin\soti\bin\Release\soti.XmlSerializers.dll
+D:\Development\Pekin\soti\bin\Release\soti.pdb
+D:\Development\Pekin\soti\bin\Release\Mind2Biz.DM.ClientMatter.dll
+D:\Development\Pekin\soti\bin\Release\Mind2Biz.DM.ClientMatter.pdb
+D:\Development\Pekin\soti\bin\Release\Mind2Biz.DM.ClientMatter.xml
+D:\Development\Pekin\soti\obj\Release\ResolveAssemblyReference.cache
+D:\Development\Pekin\soti\obj\Release\soti.exe
+D:\Development\Pekin\soti\obj\Release\soti.pdb
+D:\Development\Pekin\soti\obj\Release\soti.XmlSerializers.dll
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Release\soti.exe.config
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\obj\Release\soti.exe
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\obj\Release\soti.pdb
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\obj\Release\soti.XmlSerializers.dll
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Debug\soti.exe.config
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\obj\Debug\soti.exe
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\obj\Debug\soti.pdb
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Debug\soti.exe
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Debug\soti.pdb
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Debug\Mind2Biz.DM.ClientMatter.dll
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\obj\Debug\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Release\soti.exe
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Release\soti.XmlSerializers.dll
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Release\soti.pdb
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\bin\Release\Mind2Biz.DM.ClientMatter.dll
+\\vmware-host\Shared Folders\Cozumevi\Development\Pekin\soti\obj\Release\ResolveAssemblyReference.cache
